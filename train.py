@@ -4,6 +4,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import json
+import numpy as np
+import math
 
 
 from model import CNN, vgg, resnet, mobilenet
@@ -56,19 +58,17 @@ if __name__ == "__main__":
     loss_list = []
     accuracy_list = []
     torch.manual_seed(0)
-    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
-    test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    # train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+    # val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    # test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 
     # model,optimizer,criterion = vgg() # accuracy: 0.8002927....
-    # model,optimizer,criterion = resnet() # accuracy: 0.
-    model,optimizer,criterion = mobilenet()
+    # model,optimizer,criterion = resnet() # accuracy: 0.8520084...
+    model,optimizer,criterion = mobilenet() # accuracy: 0.8183444...
     model.to(DEVICE)
 
-    for name, module in model.named_children():
-        print("NAME: ", name)
-        print("MODULE: ", module)
+    print(model.features[0])
 
     # scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.5)
     # best_acc = 0

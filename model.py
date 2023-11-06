@@ -30,7 +30,6 @@ class CNN(nn.Module):
     
 def resnet(dropout=0.5):
     model = models.resnet152(pretrained=True)
-    model_requires_grad_params = []
 
     # Freeze parameters so we don't backprop through them
     for param in model.parameters():
