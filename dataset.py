@@ -12,9 +12,10 @@ train_transform = transforms.Compose([
     transforms.RandomHorizontalFlip(), # random horizontal flip of images
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], 
-                        [0.229, 0.224, 0.225])])
+                        [0.229, 0.224, 0.225])
     # transforms.Normalize([0.51796, 0.41106, 0.32971], 
     #                     [0.29697, 0.24955, 0.28531])
+    ])
 
 testval_transform = transforms.Compose([
     transforms.Resize(256),
