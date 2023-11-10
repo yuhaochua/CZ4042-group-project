@@ -64,7 +64,7 @@ if __name__ == "__main__":
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
-    models = ['resnet', 'mobilenet']
+    models = ['vgg', 'resnet', 'mobilenet']
     
     for m in models:
         if(m == 'vgg'):
