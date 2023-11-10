@@ -39,3 +39,9 @@
 ## Advanced Transformation Techniques.ipynb
 - This python notebook holds the code used to implement Cutmix and Mixup augmentation
 - Make sure the python interpreter points to the correct venv and simply run all the cells
+
+## Miscellaneous
+- common_utils.py holds the code for EarlyStopper class
+- dataset.py holds to code for generating Oxford Flowers 102 dataset
+- dcn.py holds code for deformable convolution to be used in models
+- model.py holds code for loading pretrained models and modifying fc/classifier layers, and implement deformable convolution
